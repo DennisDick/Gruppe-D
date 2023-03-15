@@ -37,9 +37,9 @@ void developer_print(const developer *const p_dev)         //function for printi
         {
             printf("========================\n");         
             printf("Developer: \n");
-            printf("%s\t", p_dev[i].name);            //printing developer name and alias 
-            printf("%s\t", p_dev[i].alias);           
-            printf("========================\n\n");
+            printf("name: \x1b[35;1;4m%s\t\n\033[0m", p_dev[i].name);          //printing developer name and alias 
+            printf("alias: %s\t\n", p_dev[i].alias);           
+            printf("========================\n");
         }        
         printf("*************************\n");
     }       
