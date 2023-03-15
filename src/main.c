@@ -10,9 +10,14 @@
 
 int main()
 {
-    int select;         //integer variable to define user selection
+    int select = 0;         //integer variable to define user selection
+    developer_group group;
     developer_group* ptr_dev_group;
+    ptr_dev_group = &group;
     developer* ptr_dev;
+    ptr_dev = ptr_dev_group->developer_array;
+
+    developer_group_init(ptr_dev_group);
 
     while(1)
     {
@@ -41,10 +46,10 @@ int main()
                 developer_group_print(ptr_dev_group);             
                 break;  
             case 4:             //terminate programm and delete storage
-                exit(-1);             
+                exit(-1);      
                 break;  
             default:
-                printf("undefined selection => Try Again!")            //wrong selection => try again
+                printf("undefined selection => Try Again!\n");           //wrong selection => try again
                 break;
         }
     }

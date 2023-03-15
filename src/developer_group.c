@@ -14,24 +14,7 @@ typedef struct
 }developer_group;
 
 
-void developer_group_init(developer_group *const p_dev_group, const char group_logo[])
-{
-    developer* p_developer = p_dev_group->developer_array;
-    if(p_dev_group == NULL)
-    {
-         printf("invalid pointer value!");
-         exit(-1);
-    }
-
-    else
-    {
-        developer_init(p_developer, "Luca Diener", "LD");
-        developer_init(++p_developer, "Dennis Dick", "DoubleD");
-    }
-    
-}
-
-void group_logo_init(developer_group const *p_dev_group)
+void group_logo_init(developer_group *const p_dev_group)
 {
     if(p_dev_group == NULL)
     {
@@ -55,10 +38,11 @@ void group_logo_init(developer_group const *p_dev_group)
         \\|, '_:::\\  . ..  '_:::\\ ..\\).\n");
         //p_dev_group->group_logo;
     
-}*/
+    }*/
     {
-        strcpy(p_dev_group->group_logo, 
-   " / \
+        strcpy(p_dev_group->group_logo, "DoubleD und Lucky Luke");
+    }
+   /*" / \
     / _ \
    | / \\ |
    ||   || _______
@@ -79,11 +63,12 @@ void group_logo_init(developer_group const *p_dev_group)
  \\_____       _____/
        \\     /
        |     |");
-    }
+    }*/
 }
 
-void developer_group_print(const developer_group *p_dev_group)          // function to print all the developers
+void developer_group_init(developer_group *const p_dev_group)
 {
+    developer* p_developer = p_dev_group->developer_array;
     if(p_dev_group == NULL)
     {
          printf("invalid pointer value!");
@@ -92,20 +77,21 @@ void developer_group_print(const developer_group *p_dev_group)          // funct
 
     else
     {
-        printf("^^^^^^^^^^^^^^^^^^^^^^^");
-        printf("Developer Group NOMADS");
-        developer_print(p_dev_group->developer_array);
-        group_logo_print(p_dev_group->group_logo);
-        printf("^^^^^^^^^^^^^^^^^^^^^^^");
+        developer_init(p_developer, "Luca Diener", "LD");
+        developer_init(++p_developer, "Dennis Dick", "DoubleD");
+        group_logo_init(p_dev_group);
     }
+    
 }
+
+
 
 void group_logo_print(const developer_group * const p_dev_group)
 {
     if(p_dev_group == NULL)
     {
-         printf("invalid pointer value!");
-         exit(-1);
+        printf("invalid pointer value!");
+        exit(-1);
     }
 
     else
@@ -113,4 +99,23 @@ void group_logo_print(const developer_group * const p_dev_group)
         printf("%s", p_dev_group->group_logo);
     }
 }
- 
+
+void developer_group_print(const developer_group *p_dev_group)          // function to print all the developers
+ {
+    if(p_dev_group == NULL)
+    {
+        printf("invalid pointer value!");
+        exit(-1);
+    }
+
+    else
+    {
+        printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
+        printf("Developer Group NOMADS\n");
+        developer_print(p_dev_group->developer_array);
+        group_logo_print(p_dev_group->group_logo);
+        printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
+    }
+}
+
+

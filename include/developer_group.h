@@ -13,7 +13,7 @@ typedef struct
     char group_logo[LOGO_LENGTH];
 }developer_group;
 
-void developer_group_init(developer_group *const p_dev_group, const char group_logo[]);
+void developer_group_init(developer_group *const p_dev_group);
 
 void group_logo_init(developer_group const *p_dev_group);
 
