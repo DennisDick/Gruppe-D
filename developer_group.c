@@ -82,7 +82,7 @@ void group_logo_init(developer_group const *p_dev_group)
     }
 }
 
-void print_developer_group(const developer_group *p_dev_group)          // function to print all the developers
+void developer_group_print(const developer_group *p_dev_group)          // function to print all the developers
 {
     if(p_dev_group == NULL)
     {
@@ -92,8 +92,11 @@ void print_developer_group(const developer_group *p_dev_group)          // funct
 
     else
     {
+        printf("^^^^^^^^^^^^^^^^^^^^^^^");
+        printf("Developer Group NOMADS");
         developer_print(p_dev_group->developer_array);
         group_logo_print(p_dev_group->group_logo);
+        printf("^^^^^^^^^^^^^^^^^^^^^^^");
     }
 }
 
