@@ -1,83 +1,113 @@
 #include <stdio.h>
 #include <string.h>
-#include <developer.h>
 #include <stdlib.h>
 
+#include <developer.h>
+
 #define LOGO_LENGTH 100
+#define NUMBER_DEVELOPER 2
 
 typedef struct 
 {
-    developer dev[2];
+    developer developer_array[NUMBER_DEVELOPER];
     char group_logo[LOGO_LENGTH];
 }developer_group;
 
 
-void developer_group_init(developer_group *const d, const char group_logo[])
+void developer_group_init(developer_group *const p_dev_group, const char group_logo[])
 {
-developoer eintrag 0 auf developer1
-developer2 eintrag 1 auf developer2
-greoup logo
-developer* developer1 =d->dev;
+    developer* p_developer = p_dev_group->developer_array;
+    if(p_dev_group == NULL)
+    {
+         printf("invalid pointer value!");
+         exit(-1);
+    }
 
-
-
-developer_init(developer1 ,"Luca", "LD");
-developer_init(++developer1, "Dennis", "DD");
-nullpointerüberprüfung
-exit(-1);
-
-strcpy(d->group_logo, " 
-                       ____\n
-                   .---'-    \ \n
-      .-----------/           \ \n
-     /           (         ^  |   __\n
-&   (             \        O  /  / .'\n
-'._/(              '-'  (.   (_.' /\n
-     \                    \     ./\n
-      |    |       |    |/ '._.'\n
-       )   @).____\|  @ |\n
-   .  /    /       (    | \n
-  \|, '_:::\  . ..  '_:::\ ..\).\n")
-d->group_logo;
+    else
+    {
+        developer_init(p_developer, "Luca Diener", "LD");
+        developer_init(++p_developer, "Dennis Dick", "DoubleD");
+    }
+    
 }
 
-void logo_init(developer_group *d)
+void group_logo_init(developer_group const *p_dev_group)
 {
-strcpy(d->group_logo, " 
-                       ____\n
-                   .---'-    \ \n
-      .-----------/           \ \n
-     /           (         ^  |   __\n
-&   (             \        O  /  / .'\n
-'._/(              '-'  (.   (_.' /\n
-     \                    \     ./\n
-      |    |       |    |/ '._.'\n
-       )   @).____\|  @ |\n
-   .  /    /       (    | \n
-  \|, '_:::\  . ..  '_:::\ ..\).\n")
-d->group_logo;
+    if(p_dev_group == NULL)
+    {
+         printf("invalid pointer value!");
+         exit(-1);
+    }
+
+    else
+    /*{
+        strcpy(p_dev_group->group_logo, " 
+                            ____\n
+                        .---'-    \\ \n
+            .-----------/           \\ \\n
+            /           (         ^  |   __\n
+        &   (             \\        O  /  / .'\n
+        '._/(              '-'  (.   (_.' /\n
+            \\                    \\     ./\n
+            |    |       |    |/ '._.'\n
+            )    |.____\|    |\n
+        .  /    /       (    | \\n
+        \\|, '_:::\\  . ..  '_:::\\ ..\\).\n");
+        //p_dev_group->group_logo;
+    
+}*/
+    {
+        strcpy(p_dev_group->group_logo, 
+   " / \
+    / _ \
+   | / \\ |
+   ||   || _______
+   ||   || |\\     \
+   ||   || ||\\     \
+   ||   || || \\    |
+   ||   || ||  \\__/
+   ||   || ||   ||
+    \\\\_/ \\_/ \\_//
+   /   _     _   \
+  /               \
+  |    O     O    |
+  |   \\  ___  /   |                           
+ /     \\ \\_/ /     \
+/  -----  |  --\\    \
+|     \\__/|\\__/ \\   |
+\\       |_|_|       /
+ \\_____       _____/
+       \\     /
+       |     |");
+    }
 }
 
-
-
-
-void printlogo(const developer_group *)// function to print all the developers
+void print_developer_group(const developer_group *p_dev_group)          // function to print all the developers
 {
-developer_print()
+    if(p_dev_group == NULL)
+    {
+         printf("invalid pointer value!");
+         exit(-1);
+    }
 
-
-
-
-
-)
-
+    else
+    {
+        developer_print(p_dev_group->developer_array);
+        group_logo_print(p_dev_group->group_logo);
+    }
 }
 
-void developer_group_print(const developer_group * const d)
+void group_logo_print(const developer_group * const p_dev_group)
 {
-   printf(" Das Gruppenlogo ist %s", group_logo) 
-   
-printlogo(d);
-printDeveloper(d->dev);
+    if(p_dev_group == NULL)
+    {
+         printf("invalid pointer value!");
+         exit(-1);
+    }
+
+    else
+    {
+        printf("%s", p_dev_group->group_logo);
+    }
 }
  

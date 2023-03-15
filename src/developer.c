@@ -1,24 +1,35 @@
-#include "developer.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+#include "developer.h"
+
 #define NAME_LENGTH 20
 #define NUMBER_DEVELOPER 2
 
-void developer_init( developer *const dev, const char name[], const char alias[])         //initialization of developers 
+void developer_init( developer *const p_dev, const char name[], const char alias[])         //initialization of developers 
 {
-    strncpy(dev->name, name, strlen(name) + 1);
-    strncpy(dev->alias, alias, strlen(alias) + 1);
+     if (p_dev == NULL)
+    {
+        printf("invalid pointer value!");
+        exit(-1);
+    }
+
+    else
+    {
+        strncpy(p_dev->name, name, strlen(name) + 1);
+        strncpy(p_dev->alias, alias, strlen(alias) + 1);
+    }
 }
 
-void developer_print(const developer *const dev)         //function for printing developers with pointer which points on array of developer in structure developer_group
+void developer_print(const developer *const p_dev)         //function for printing developers with pointer which points on array of developer in structure developer_group
 {
-    if (dev == NULL)
+    if (p_dev == NULL)
     {
-
+        printf("invalid pointer value!");
+        exit(-1);
     }
+
     else
     {
         printf("*************************\n"); 
@@ -26,8 +37,8 @@ void developer_print(const developer *const dev)         //function for printing
         {
             printf("========================\n");         
             printf("Developer: \n");
-            printf("%s\t", dev[i].name);            //printing developer name and alias 
-            printf("%s\t", dev[i].alias);           
+            printf("%s\t", p_dev[i].name);            //printing developer name and alias 
+            printf("%s\t", p_dev[i].alias);           
             printf("========================\n\n");
         }        
         printf("*************************\n");
