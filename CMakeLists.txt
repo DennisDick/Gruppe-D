@@ -8,7 +8,7 @@ project(developer_project VERSION 1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
-#ass some compile options
+#add some compile options
 add_compile_options(-Wall -Wextra -pedantic -00)
 
 #add a library for your functions
@@ -24,7 +24,7 @@ target_include_directories(developer_lib PUBLIC include)
 add_executable(developer_project src/main.c)
 
 #add the include directories
-target_include_directories(developer_project PRIVATE include)
+target_include_directories(developer_project PUBLIC include)
 
 #link your library
 target_link_libraries(developer_project PRIVATE developer_lib)
