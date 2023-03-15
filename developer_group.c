@@ -40,7 +40,7 @@ void group_logo_init(developer_group const *p_dev_group)
     }
 
     else
-    /*{
+    {
         strcpy(p_dev_group->group_logo, " 
                             ____\n
                         .---'-    \\ \n
@@ -53,32 +53,6 @@ void group_logo_init(developer_group const *p_dev_group)
             )    |.____\|    |\n
         .  /    /       (    | \\n
         \\|, '_:::\\  . ..  '_:::\\ ..\\).\n");
-        //p_dev_group->group_logo;
-    
-}*/
-    {
-        strcpy(p_dev_group->group_logo, 
-   " / \
-    / _ \
-   | / \\ |
-   ||   || _______
-   ||   || |\\     \
-   ||   || ||\\     \
-   ||   || || \\    |
-   ||   || ||  \\__/
-   ||   || ||   ||
-    \\\\_/ \\_/ \\_//
-   /   _     _   \
-  /               \
-  |    O     O    |
-  |   \\  ___  /   |                           
- /     \\ \\_/ /     \
-/  -----  |  --\\    \
-|     \\__/|\\__/ \\   |
-\\       |_|_|       /
- \\_____       _____/
-       \\     /
-       |     |");
     }
 }
 
@@ -92,8 +66,7 @@ void developer_group_print(const developer_group *p_dev_group)          // funct
 
     else
     {
-        printf("^^^^^^^^^^^^^^^^^^^^^^^");
-        printf("Developer Group NOMADS");
+        printf("^^^^^^^^^^^^^^^^^^^^^^^\n Developer Group NOMADS");
         developer_print(p_dev_group->developer_array);
         group_logo_print(p_dev_group->group_logo);
         printf("^^^^^^^^^^^^^^^^^^^^^^^");
