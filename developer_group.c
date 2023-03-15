@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <developer.h>
-
+#include <stdlib.h>
 
 #define LOGO_LENGTH 100
 
@@ -12,23 +12,72 @@ typedef struct
 }developer_group;
 
 
-void developer_group_init(developer *const d, char group_logo[])
+void developer_group_init(developer_group *const d, const char group_logo[])
 {
-group_logo_init()
+developoer eintrag 0 auf developer1
+developer2 eintrag 1 auf developer2
+greoup logo
+developer* developer1 =d->dev;
+
+
+
+developer_init(developer1 ,"Luca", "LD");
+developer_init(++developer1, "Dennis", "DD");
+nullpointerüberprüfung
+exit(-1);
+
+strcpy(d->group_logo, " 
+                       ____\n
+                   .---'-    \ \n
+      .-----------/           \ \n
+     /           (         ^  |   __\n
+&   (             \        O  /  / .'\n
+'._/(              '-'  (.   (_.' /\n
+     \                    \     ./\n
+      |    |       |    |/ '._.'\n
+       )   @).____\|  @ |\n
+   .  /    /       (    | \n
+  \|, '_:::\  . ..  '_:::\ ..\).\n")
+d->group_logo;
+}
+
+void logo_init(developer_group *d)
 {
+strcpy(d->group_logo, " 
+                       ____\n
+                   .---'-    \ \n
+      .-----------/           \ \n
+     /           (         ^  |   __\n
+&   (             \        O  /  / .'\n
+'._/(              '-'  (.   (_.' /\n
+     \                    \     ./\n
+      |    |       |    |/ '._.'\n
+       )   @).____\|  @ |\n
+   .  /    /       (    | \n
+  \|, '_:::\  . ..  '_:::\ ..\).\n")
+d->group_logo;
+}
 
-strncpy(d->group_logo, logo, logo[]+1)
-
-printf(Das Gruppenlogo ist %c, )
-};
 
 
+
+void printlogo(const developer_group *)// function to print all the developers
+{
+developer_print()
+
+
+
+
+
+)
 
 }
 
-void developer_group_print()
+void developer_group_print(const developer_group * const d)
 {
-    print_group();
-    print_logo();
-
+   printf(" Das Gruppenlogo ist %s", group_logo) 
+   
+printlogo(d);
+printDeveloper(d->dev);
 }
+ 
