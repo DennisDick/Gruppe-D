@@ -2,37 +2,37 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <developer.h>
+#include "developer.h"
+#include "developer_group.h"
 
 #define LOGO_LENGTH 300
 #define NUMBER_DEVELOPER 2
 
-typedef struct 
+typedef struct          //function to initialize the developer_group
 {
     developer developer_array[NUMBER_DEVELOPER];
     char group_logo[LOGO_LENGTH];
 }developer_group;
 
 
-void group_logo_init(const developer_group *const p_dev_group)
+void group_logo_init(developer_group *const p_dev_group)
 {
-    if(p_dev_group == NULL)
+    if(p_dev_group == NULL)         //zero pointer check
     {
          printf("invalid pointer value!");
          exit(-1);
     }
 
-    else
+    else            //printing out the logo
     {
         strcpy(p_dev_group->group_logo, "  .   *   ..  . *  *\n*  * @()Ooc()*   o  .\n   (Q@*0CG*O()  ___ \n   |\\_________/|/ _ \\ \n   |  |  |  |  | / | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | \\_| |\n   |  |  |  |  |\\___/\n   |\\_|__|__|_/|\n    \\_________/\n");
     }
-   
 }
 
-void developer_group_init(const developer_group *const p_dev_group)
+void developer_group_init(developer_group *const p_dev_group)
 {
-    developer* p_developer = p_dev_group->developer_array;
-    if(p_dev_group == NULL)
+    developer* p_developer = p_dev_group->developer_array;          //creating a pointer of the struct developer that points on the developer_array
+    if(p_dev_group == NULL)         //zero pointer check
     {
          printf("invalid pointer value!");
          exit(-1);
@@ -40,18 +40,17 @@ void developer_group_init(const developer_group *const p_dev_group)
 
     else
     {
-        developer_init(p_developer, "Luca Diener", "LD");
-        developer_init(++p_developer, "Dennis Dick", "DoubleD");
-        group_logo_init(p_dev_group);
-    }
-    
+        developer_init(p_developer, "Luca Diener", "LD");           //initializing the first developer
+        developer_init(++p_developer, "Dennis Dick", "DoubleD");            //initializing the second developer by writing it into the second register of the developer array
+        group_logo_init(p_dev_group);           //initialzing the group logo
+    }  
 }
 
 
 
-void group_logo_print(const developer_group * const p_dev_group)
+void group_logo_print(const developer_group * const p_dev_group)            //function to print the group logo
 {
-    if(p_dev_group == NULL)
+    if(p_dev_group == NULL)         //zero pointer check
     {
         printf("invalid pointer value!");
         exit(-1);
@@ -59,13 +58,13 @@ void group_logo_print(const developer_group * const p_dev_group)
 
     else
     {
-        printf("%s", p_dev_group->group_logo);
+        printf("%s", p_dev_group->group_logo);          //printing the group logo array
     }
 }
 
-void developer_group_print(const developer_group *p_dev_group)          // function to print all the developers
+void developer_group_print(const developer_group *p_dev_group)          //function to print the developers and the group logo
  {
-    if(p_dev_group == NULL)
+    if(p_dev_group == NULL)         //zero pointer check
     {
         printf("invalid pointer value!");
         exit(-1);
@@ -75,9 +74,8 @@ void developer_group_print(const developer_group *p_dev_group)          // funct
     {
         printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
         printf("Developer Group NOMADS\n");
-        
-        group_logo_print(p_dev_group);
         developer_print(p_dev_group->developer_array);
+        group_logo_print(p_dev_group->group_logo);
         printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
     }
 }
