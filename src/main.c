@@ -11,16 +11,19 @@
 
 int main()
 {
-    uint8_t select = '0';         //integer variable to define user selection
-    developer_group group;
-    developer_group* ptr_dev_group;
-    ptr_dev_group = &group;
-    developer* ptr_dev;
-    ptr_dev = ptr_dev_group->developer_array;
+    uint8_t select = 0;         //uint8_t to define user selection and optimize storage usage
 
-    developer_group_init(ptr_dev_group);
+    developer_group group;          //creating a struct of type "developer_group"
 
-    while(1)
+    developer_group* ptr_dev_group;         //creating a pointer of type "developer_group"
+    ptr_dev_group = &group;         //pointer points on struct "group"
+
+    developer* ptr_dev;         //creating a pointer of type "developer"
+    ptr_dev = ptr_dev_group->developer_array;           //pointer pointing on developer_array of the struct "group"
+
+    developer_group_init(ptr_dev_group);            //initializing the developers as well as the group logo
+
+    while(1)            //using an endless while loop so that user can do as many inputs as wished
     {
         printf("\033[4;92m========================\n");         //generating user interface with printf
         printf("Choose your action: \n");
@@ -31,26 +34,24 @@ int main()
         printf("========================\033[0m\n");
 
         printf("Enter your selection: ");
-        scanf("%2d", &select);
+        scanf("%2d", &select);          //input of user is written into variable "select"
 
-        //following switch case is a template which later has to be filled 
-
-        switch (select)         //previously defined user selection used in switch case
+        switch (select)         //switch case for each possible user input
         {  
-            case 1:             //list developers
+            case 1:             //listing developers
                 developer_print(ptr_dev);             
                 break;
-            case 2:             //print logo group
+            case 2:             //printing logo group
                 group_logo_print(ptr_dev_group);             
                 break;
-            case 3:             //print developers and group logo
+            case 3:             //printing developers and group logo
                 developer_group_print(ptr_dev_group);             
                 break;  
             case 4:             //terminate programm and delete storage
                 exit(-1);      
                 break;  
-            default:
-                printf("undefined selection => Try Again!\n");           //wrong selection => try again
+            default:            //wrong user input => try again
+                printf("undefined selection => Try Again!\n");           
                 break;
         }
     }
