@@ -23,47 +23,10 @@ void group_logo_init(developer_group *const p_dev_group)
     }
 
     else
-    /*{
-        strcpy(p_dev_group->group_logo, " 
-                            ____\n
-                        .---'-    \\ \n
-            .-----------/           \\ \\n
-            /           (         ^  |   __\n
-        &   (             \\        O  /  / .'\n
-        '._/(              '-'  (.   (_.' /\n
-            \\                    \\     ./\n
-            |    |       |    |/ '._.'\n
-            )    |.____\|    |\n
-        .  /    /       (    | \\n
-        \\|, '_:::\\  . ..  '_:::\\ ..\\).\n");
-        //p_dev_group->group_logo;
-    
-    }*/
     {
-        strcpy(p_dev_group->group_logo, "DoubleD und Lucky Luke");
+        strcpy(p_dev_group->group_logo, "  .   *   ..  . *  *\n*  * @()Ooc()*   o  .\n(Q@*0CG*O()  ___\n|\_________/|/ _ \\n|  |  |  |  | / | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | \_| |\n|  |  |  |  |\___/\n|\_|__|__|_/|\n\_________/\n");
     }
-   /*" / \
-    / _ \
-   | / \\ |
-   ||   || _______
-   ||   || |\\     \
-   ||   || ||\\     \
-   ||   || || \\    |
-   ||   || ||  \\__/
-   ||   || ||   ||
-    \\\\_/ \\_/ \\_//
-   /   _     _   \
-  /               \
-  |    O     O    |
-  |   \\  ___  /   |                           
- /     \\ \\_/ /     \
-/  -----  |  --\\    \
-|     \\__/|\\__/ \\   |
-\\       |_|_|       /
- \\_____       _____/
-       \\     /
-       |     |");
-    }*/
+   
 }
 
 void developer_group_init(developer_group *const p_dev_group)
