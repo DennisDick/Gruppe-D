@@ -5,7 +5,7 @@
 #include "developer.h"
 
 #define NUMBER_DEVELOPER 2
-#define LOGO_LENGTH 100
+#define LOGO_LENGTH 300
 
 typedef struct 
 {

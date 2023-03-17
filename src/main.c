@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
 #include "developer.h"
 #include "developer_group.h"
@@ -10,7 +11,7 @@
 
 int main()
 {
-    int select = 0;         //integer variable to define user selection
+    uint8_t select = '0';         //integer variable to define user selection
     developer_group group;
     developer_group* ptr_dev_group;
     ptr_dev_group = &group;
@@ -30,7 +31,7 @@ int main()
         printf("========================\033[0m\n");
 
         printf("Enter your selection: ");
-        scanf("%d", &select);
+        scanf("%2d", &select);
 
         //following switch case is a template which later has to be filled 
 

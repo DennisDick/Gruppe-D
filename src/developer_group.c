@@ -4,7 +4,7 @@
 
 #include <developer.h>
 
-#define LOGO_LENGTH 100
+#define LOGO_LENGTH 300
 #define NUMBER_DEVELOPER 2
 
 typedef struct 
@@ -14,7 +14,7 @@ typedef struct
 }developer_group;
 
 
-void group_logo_init(developer_group *const p_dev_group)
+void group_logo_init(const developer_group *const p_dev_group)
 {
     if(p_dev_group == NULL)
     {
@@ -24,12 +24,12 @@ void group_logo_init(developer_group *const p_dev_group)
 
     else
     {
-        strcpy(p_dev_group->group_logo, "  .   *   ..  . *  *\n*  * @()Ooc()*   o  .\n(Q@*0CG*O()  ___\n|\_________/|/ _ \\n|  |  |  |  | / | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | | | |\n|  |  |  |  | \_| |\n|  |  |  |  |\___/\n|\_|__|__|_/|\n\_________/\n");
+        strcpy(p_dev_group->group_logo, "  .   *   ..  . *  *\n*  * @()Ooc()*   o  .\n   (Q@*0CG*O()  ___ \n   |\\_________/|/ _ \\ \n   |  |  |  |  | / | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | | | |\n   |  |  |  |  | \\_| |\n   |  |  |  |  |\\___/\n   |\\_|__|__|_/|\n    \\_________/\n");
     }
    
 }
 
-void developer_group_init(developer_group *const p_dev_group)
+void developer_group_init(const developer_group *const p_dev_group)
 {
     developer* p_developer = p_dev_group->developer_array;
     if(p_dev_group == NULL)
@@ -75,8 +75,9 @@ void developer_group_print(const developer_group *p_dev_group)          // funct
     {
         printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
         printf("Developer Group NOMADS\n");
+        
+        group_logo_print(p_dev_group);
         developer_print(p_dev_group->developer_array);
-        group_logo_print(p_dev_group->group_logo);
         printf("^^^^^^^^^^^^^^^^^^^^^^^\n");
     }
 }

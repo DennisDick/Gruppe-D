@@ -17,7 +17,7 @@ void developer_init( developer *const p_dev, const char name[], const char alias
 
     else
     {
-        strncpy(p_dev->name, name, strlen(name) + 1);
+        strncpy(p_dev->name, name, strlen(name) + 1);           
         strncpy(p_dev->alias, alias, strlen(alias) + 1);
     }
 }
