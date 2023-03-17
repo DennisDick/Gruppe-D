@@ -15,7 +15,7 @@ typedef struct          //initializing struct prototype "developer_group"
 
 void developer_group_init(developer_group *const p_dev_group);          //function to initialize the developer group
 
-void group_logo_init(developer_group const *p_dev_group);           //function to initialize the group logo
+void group_logo_init(developer_group *const p_dev_group);           //function to initialize the group logo
 
 void developer_group_print(const developer_group *p_dev_group);         //function to print the developer group
 
