@@ -4,14 +4,14 @@
 
 #define NAME_LENGTH 20
 
-typedef struct
+typedef struct          //initializing struct prototype "developer"
 {
     char name[NAME_LENGTH]; 
     char alias[NAME_LENGTH];
 } developer;
 
-void developer_init(developer *const dev, const char name[], const char alias[]);
+void developer_init(developer *const dev, const char name[], const char alias[]);           //function for initializing developers
 
-void developer_print(const developer *const dev);
+void developer_print(const developer *const dev);           //function for printing developers
 
 #endif
